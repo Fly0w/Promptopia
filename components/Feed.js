@@ -49,14 +49,14 @@ const Feed = () => {
   // Fetches all the posts from the database to put them in the state
   useEffect(() => {
     const fetchPosts = async () => {
-    const response = await fetch('/api/prompt');
-    const data = await response.json();
+      const response = await fetch('/api/prompt');
+      const data = await response.json();
 
-    setPosts(data);
-  }
+      setPosts(data);
+    }
 
   fetchPosts()
-}, [])
+  }, [])
 
   return (
     <section className="feed">
