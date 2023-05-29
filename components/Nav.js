@@ -41,7 +41,7 @@ const Nav = () => {
       <div className="flex gap-3 md:gap-5">
         <Link href="/create-prompt" className="black_btn">Create Post</Link>
         <button type="button" onClick={signOut} className="outline_btn">Sign Out</button>
-        <Link href="/profile">
+        <Link href={`/profile?id=${session.user.id}&username=${session.user.name.replace(" ", "").toLowerCase()}`}>
           <Image 
             src={session.user.image} 
             width={37}
@@ -78,7 +78,7 @@ const Nav = () => {
           {toggleDropdown && (
             <div className="dropdown">
               <Link
-                href="/profile"
+                href={`/profile?id=${session.user.id}&username=${session.user.name.replace(" ", "").toLowerCase()}`}
                 className="dropdown_link"
                 onClick={() => setToggleDropdown(false)}>
                   My profile
