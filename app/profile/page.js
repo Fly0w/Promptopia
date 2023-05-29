@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useSession } from 'next-auth/react';
 
 import Profile from "@/components/Profile";
 
 const ProfilePage = () => {
     const [posts, setPosts] = useState([]);
     const router = useRouter();
+    const { data: session } = useSession();
 
     // Get the user info in the URL
     const searchParams = useSearchParams();
@@ -57,12 +59,19 @@ const ProfilePage = () => {
     }
 
   return (
-    <Profile 
+    session?.user
+    ? (
+      <Profile 
         name={username}
         data={posts}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
-    />
+      />
+    )
+    : <div>
+      <p className="font-satoshi text-base px-5 text-gray-700 border-2 border-blue-400 rounded-lg">Please signin first to see {username}'s profile</p>
+    </div>
+    
   )
 }
 

@@ -43,13 +43,20 @@ const CreatePrompt = () => {
     }
 
   return (
-    <Form 
-        type="Create"
-        post={post}
-        setPost={setPost}
-        submitting={submitting}
-        handleSubmit={createPrompt}
-    />
+    session?.user
+    ? (
+        <Form 
+            type="Create"
+            post={post}
+            setPost={setPost}
+            submitting={submitting}
+            handleSubmit={createPrompt}
+        />
+    )
+    : <div>
+      <p className="font-satoshi text-base px-5 text-gray-700 border-2 border-blue-400 rounded-lg">Please signin first to create a post</p>
+    </div> 
+  
   )
 }
 
