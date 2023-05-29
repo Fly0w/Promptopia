@@ -19,6 +19,9 @@ const RootLayout = ({children}) => {
                 <main className="app">
                     <Nav />
                     {children}
+                    <p className='object-bottom text-black'>
+                       Ver 1.0
+                    </p>
                 </main> 
             </Provider>
         </body>
