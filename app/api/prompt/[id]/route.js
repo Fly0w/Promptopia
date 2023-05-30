@@ -4,7 +4,7 @@ import Prompt from "@/models/prompts";
 /* Endpoint for managing the user's prompts, edit and delete */
 
 
-//GET (read)
+//GET (read the prompt)
 export const GET = async (req, { params }) => {
     try {
         await connectToDB()
@@ -28,7 +28,7 @@ export const GET = async (req, { params }) => {
 }
 
 
-//PATCH
+//PATCH (edit the prompt)
 export const PATCH = async (req, { params }) => {
     const { newPrompt, newTag } = await req.json();
 
@@ -57,7 +57,7 @@ export const PATCH = async (req, { params }) => {
 }
 
 
-//DELETE
+//DELETE (delete the prompt)
 export const DELETE = async (req, { params }) => {
     try {
         await connectToDB();
