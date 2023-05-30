@@ -3,7 +3,7 @@
 NextJS web application deployed on Vercel, that allows user to share their best AI prompts such as ChatGPT. This app includes a Google OAuth authentificator for Signing in, as well as a NextJS API combined with a MongoDB Database (using mongoose) for users and prompts tables.
 
 
-![](https://https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20preview.gif)
+![](https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20preview.gif)
 
 
 ## Features
@@ -13,7 +13,7 @@ By using the next-auth library, the website allows users to connect using their 
 
 [Bug] Can't be used from an embedded browser --> Error 403
 
-![](https://https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20Sign%20in.gif)
+![](https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20Sign%20in.gif)
 
 ### Feed page
 The feed page displays all the posts from all the users in the database. The user can access any user's profile page by clicking on their username, email or picture, as long as they are already logged in.
@@ -33,7 +33,7 @@ It is possible to search for a prompt, username, email or tag very fast by typin
 
 Clicking on a tag will executes a search for this particular tag.
 
-![](https://https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20search.gif)
+![](https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20search.gif)
 
 ### Profile page
 The profile page displays all the prompts from that user. It uses API calls to fetch from the database only that particular user's prompts:
@@ -47,7 +47,7 @@ export const GET = async (req, { params }) => {
         return new Response(JSON.stringify(prompts), {status: 200})
 ```
 
-![](https://https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20Profile.gif)
+![](https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20Profile.gif)
 
 ### Create, Edit, Delete post
 It is possible to create a prompt if the user is connected. Then, when accessing the profile page, the user can edit or delete his/her prompts only if those are made by this particular user. It is not posible to edit someone else's prompts.
@@ -60,5 +60,5 @@ These features are using 4 endpoints with POST, GET, PATCH and DELETE requests :
 - DELETE: Deletes the prompt from the database
 
 
-![](https://https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20Edit.gif)
+![](https://github.com/Fly0w/Promptopia/blob/main/Media/Promptopia%20Edit.gif)
 
