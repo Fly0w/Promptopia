@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useSession } from 'next-auth/react';
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useSession, pat } from 'next-auth/react';
 
 import Profile from "@/components/Profile";
 
@@ -10,6 +10,7 @@ const ProfilePage = () => {
     const [posts, setPosts] = useState([]);
     const router = useRouter();
     const { data: session } = useSession();
+    const pathName = usePathname();
 
     // Get the user info in the URL
     const searchParams = useSearchParams();
@@ -29,7 +30,7 @@ const ProfilePage = () => {
         fetchPosts()
     }
 
-    }, [])
+    }, [pathName])
 
     //Delete prompt function
     const handleDelete = async (post) => {

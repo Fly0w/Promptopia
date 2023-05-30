@@ -11,6 +11,7 @@ const Nav = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
 
+
   // Set up the Providers at the first loading of the page
   useEffect(() => {
     const setUpProviders = async () => {
@@ -20,7 +21,7 @@ const Nav = () => {
     }
 
     setUpProviders()
-  }, [])
+  }, )
 
   return (
     <nav className="flex-between w-full mb-16 pt-3">
